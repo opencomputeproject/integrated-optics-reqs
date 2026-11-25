@@ -1,0 +1,145 @@
+{
+  "locations": [
+    {
+      "id": "front",
+      "name": "Optics At Front Panel"
+    },
+    {
+      "id": "behind",
+      "name": "Optics Behind the Front Panel"
+    }
+  ],
+  "families": [
+    {
+      "id": "fpo",
+      "name": "Front Pluggable Optics",
+      "placement": "At the faceplate",
+      "location": "front",
+      "standards": "Standardized"
+    },
+    {
+      "id": "npo",
+      "name": "Near Package Optics",
+      "placement": "Optics Outside The Package",
+      "location": "behind",
+      "standards": "Standards being developed"
+    },
+    {
+      "id": "cpo",
+      "name": "Co-Packaged Optics",
+      "placement": "Optics Inside The Package",
+      "location": "behind",
+      "standards": "Some standards exist, others remain to be developed"
+    }
+  ],
+  "criteria": [
+    {
+      "id": "attachment",
+      "name": "Attachment"
+    },
+    {
+      "id": "pitch",
+      "name": "Rough Pitch for High-speed"
+    },
+    {
+      "id": "interface",
+      "name": "Electrical I/F for High-speed"
+    },
+    {
+      "id": "characteristics",
+      "name": "Characteristics"
+    },
+    {
+      "id": "interoperability",
+      "name": "Interoperability & Binding"
+    },
+    {
+      "id": "standards",
+      "name": "Standards"
+    }
+  ],
+  "options": [
+    {
+      "id": "fpo",
+      "family": "fpo",
+      "name": "FPO",
+      "description": "Optics Plugged at Front Panel",
+      "values": {
+        "attachment": "Receptacle on front panel",
+        "pitch": "~0.5 - 1.0 mm",
+        "interface": "High-speed\n> 22 dB / 200G",
+        "characteristics": "• May use integrated copper attach, copper/flex, or PCB traces",
+        "interoperability": "Replaceable with interoperable optics at any time in life cycle,\ngenerally hot swappable"
+      }
+    },
+    {
+      "id": "npo-pcb",
+      "family": "npo",
+      "name": "NPO-PCB",
+      "description": "(or OBO) Optics on PCB",
+      "note": 1,
+      "values": {
+        "attachment": "Socketed or Soldered\nOn PCB",
+        "pitch": "PCB: 0.6-1.0 mm",
+        "interface": "High-speed\nFlex/Cable: 13-18dB/200G\nPCB: 16-22 dB / 200G",
+        "characteristics": "• May use integrated copper attach, copper/flex, or PCB traces",
+        "interoperability": "• Soldered: Interoperable but not replaceable\n• Socketed: Replaceable when removing blade"
+      }
+    },
+    {
+      "id": "npo-hdi",
+      "family": "npo",
+      "name": "NPO-HDI",
+      "description": "Optics on HDI",
+      "note": 2,
+      "values": {
+        "attachment": "Socketed or Soldered\nOn HDI",
+        "pitch": "HDI: 0.3-0.5 mm",
+        "interface": "High-speed\nHDI: 13-18dB/200G",
+        "characteristics": "• HDI traces",
+        "interoperability": "• Soldered: Interoperable but not replaceable\n• Socketed: Replaceable when removing blade"
+      }
+    },
+    {
+      "id": "cpo",
+      "family": "cpo",
+      "name": "CPO",
+      "description": "Optics with Standard Packaging",
+      "values": {
+        "attachment": "Soldered\n(Standard Packaging)",
+        "pitch": "C4 bumps / ~ 110 µm",
+        "interface": "High-speed, &\nD2D (e.g. UCIe-S, BoW)",
+        "characteristics": "• Lowest loss\n• High BW edge density\n• Integrated SoC",
+        "interoperability": "• Interoperable at chiplet level but not replaceable"
+      }
+    },
+    {
+      "id": "cpo-ap",
+      "family": "cpo",
+      "name": "CPO-AP",
+      "description": "Optics with Advanced Packaging",
+      "note": 3,
+      "values": {
+        "attachment": "Soldered\n(Advanced Packaging)",
+        "pitch": "µbumps / ~ 30-50 µm",
+        "interface": "High-speed, &\nD2D (e.g. UCIe-A, BoW)",
+        "characteristics": "• Lowest loss\n• Highest BW edge density\n• Highly integrated SoC",
+        "interoperability": "• Interoperable at chiplet level but not replaceable"
+      }
+    }
+  ],
+  "notes": [
+    {
+      "number": 1,
+      "text": "NPO-PCB implementations are sometimes referred to as On-Board Optics (OBO)"
+    },
+    {
+      "number": 2,
+      "text": "Some on-package implementations of NPO-HDI are sometimes referred to as \"CPO\" (CPO-HDI)"
+    },
+    {
+      "number": 3,
+      "text": "A specific implementation of CPO-AP using a combination of an interposer and µbumps for optics has been referred to as Co-Integrated Optics (CIO)"
+    }
+  ]
+}

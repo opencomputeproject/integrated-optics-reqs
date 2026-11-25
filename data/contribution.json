@@ -1,0 +1,22 @@
+{
+  "title": "Optical Connectivity Options",
+  "version": "0.5.5",
+  "author": "Jeff Hutchins",
+  "affiliation": "Ranovus",
+  "workstreamCredit": "and SROI work stream, contributors TBD",
+  "date": "2026-10-22",
+  "introduction": "As data rates climb toward 200G per lane and beyond, the industry is exploring several ways to bring optics closer to the host ASIC, and the terminology used to describe these options is often inconsistent. The table below organizes them into three categories by location: Front Pluggable Optics (FPO) at the faceplate, Near Package Optics (NPO) on the PCB or HDI substrate, and Co-Packaged Optics (CPO) inside the package. It compares each option across attachment method, connection pitch, electrical interface, characteristics, interoperability, and standards maturity. In short, moving optics closer to the ASIC shortens the electrical path, reducing loss and increasing bandwidth density, but at the cost of replaceability and with less mature standards.",
+  "tableCaption": "Table 1 – Connectivity Options and Characteristics",
+  "figureCaption": "Figure 1 - O/E Placement Options side view and top view",
+  "licenseTitle": "Creative Commons",
+  "licenseText": [
+    "OCP encourages participants to share their proposals, specifications and designs with the community. This is to promote openness and encourage continuous and open feedback. It is important to remember that by providing feedback for any such documents, whether in written or verbal form, that the contributor or the contributor's organization grants OCP and its members irrevocable right to use this feedback for any purpose without any further obligation.",
+    "It is acknowledged that any such documentation and any ancillary materials that are provided to OCP in connection with this document, including without limitation any white papers, articles, photographs, studies, diagrams, contact information (together, “Materials”) are made available under the Creative Commons Attribution-ShareAlike 4.0 International License found here: https://creativecommons.org/licenses/by-sa/4.0/, or any later version, and without limiting the foregoing, OCP may make the Materials available under such terms.",
+    "As a contributor to this document, all members represent that they have the authority to grant the rights and licenses herein. They further represent and warrant that the Materials do not and will not violate the copyrights or misappropriate the trade secret rights of any third party, including without limitation rights in intellectual property. The contributor(s) also represent that, to the extent the Materials include materials protected by copyright or trade secret rights that are owned or created by any third-party, they have obtained permission for its use consistent with the foregoing. They will provide OCP evidence of such permission upon OCP’s request. This document and any \"Materials\" are published on the respective project's wiki page and are open to the public in accordance with OCP's Bylaws and IP Policy. This can be found at http://www.opencompute.org/participate/legal-documents/. If you have any questions, please contact OCP."
+  ],
+  "aboutTitle": "About Open Compute Foundation",
+  "aboutText": [
+    "The Open Compute Project (OCP) brings at-scale innovations and hyperscaler best practices to all, spanning technology domains from the data center to the edge, and the technology stack from silicon, to systems, to site facilities and services. The international OCP Community is made up of organizations and people from hyperscale and tier-2 cloud data center operators, communications providers, colocation providers, diverse enterprises, and technology vendors. The OCP Foundation fosters collaboration within the Community to tackle market challenges in an array of OCP Projects that create open contributions such as specifications, designs, and more. The OCP Solution Provider Program then recognizes the application of those contributions in compliant products, solutions, and data center facilities and services with designations like OCP Inspired, OCP Accepted and OCP Ready. With the tenets of openness, impact, efficiency, scale and sustainability, the OCP engages and educates thousands of engineers every year through many events and webinars. Across many initiatives the OCP Foundation and Community are meeting the market today and shaping the future.",
+    "Learn more at: www.opencompute.org."
+  ]
+}
