@@ -2,6 +2,7 @@
 
 Draft contribution from the Open Compute Project (OCP) Future Technologies Initiative Short Reach Optical Interconnect (SROI) workstream. The source draft is version 0.5.5, dated October 22, 2026, by Jeff Hutchins, Ranovus.
 
+- [Open the interactive viewer on GitHub Pages](https://opencomputeproject.github.io/integrated-optics-reqs/)
 - [Read the contribution on GitHub](contribution.md)
 - [Open the browser preview locally](docs/index.html) by opening the downloaded file in a browser.
 - [Visit the SROI workstream](https://www.opencompute.org/projects/future-technologies-initiative/short-reach-optical-interconnect/)
