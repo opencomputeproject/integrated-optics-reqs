@@ -167,6 +167,7 @@ def write_views(check):
         title=escape(contribution["title"]),
         version=escape(contribution["version"]), date=contribution["date"], date_display=date_display,
         author=escape(contribution["author"]), affiliation=escape(contribution["affiliation"]),
+        workstream_credit=escape(contribution["workstreamCredit"]),
         filters=filters, matrix=matrix_html(contribution, data),
         option_cards=option_cards_html(data), option_count=len(data["options"]), notes=notes_html,
         introduction=escape(contribution["introduction"]), license_title=escape(contribution["licenseTitle"]),
@@ -177,8 +178,9 @@ def write_views(check):
     draft = "\n\n".join([
         "<!-- Generated from data/contribution.json and data/optical-options.json by scripts/build.py. -->",
         f'# {contribution["title"]}',
-        f'Workstream draft {contribution["version"]} · {date_display}\n\n'
-        f'{contribution["author"]}, {contribution["affiliation"]}',
+        f'Workstream draft {contribution["version"]}',
+        f'{contribution["author"]}, {contribution["affiliation"]} · {contribution["workstreamCredit"]}',
+        date_display,
         "## Introduction", contribution["introduction"],
         "## Optical Connectivity Options",
         f'*{contribution["tableCaption"]}*',

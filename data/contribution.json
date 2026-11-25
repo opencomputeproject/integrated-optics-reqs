@@ -3,6 +3,7 @@
   "version": "0.5.5",
   "author": "Jeff Hutchins",
   "affiliation": "Ranovus",
+  "workstreamCredit": "and SROI work stream, contributors TBD",
   "date": "2026-10-22",
   "introduction": "As data rates climb toward 200G per lane and beyond, the industry is exploring several ways to bring optics closer to the host ASIC, and the terminology used to describe these options is often inconsistent. The table below organizes them into three categories by location: Front Pluggable Optics (FPO) at the faceplate, Near Package Optics (NPO) on the PCB or HDI substrate, and Co-Packaged Optics (CPO) inside the package. It compares each option across attachment method, connection pitch, electrical interface, characteristics, interoperability, and standards maturity. In short, moving optics closer to the ASIC shortens the electrical path, reducing loss and increasing bandwidth density, but at the cost of replaceability and with less mature standards.",
   "tableCaption": "Table 1 – Connectivity Options and Characteristics",

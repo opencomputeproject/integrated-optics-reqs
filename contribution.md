@@ -2,9 +2,11 @@
 
 # Optical Connectivity Options
 
-Workstream draft 0.5.5 · October 22, 2026
+Workstream draft 0.5.5
 
-Jeff Hutchins, Ranovus
+Jeff Hutchins, Ranovus · and SROI work stream, contributors TBD
+
+October 22, 2026
 
 ## Introduction
 

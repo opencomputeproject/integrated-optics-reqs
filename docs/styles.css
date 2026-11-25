@@ -63,6 +63,7 @@ h1, h2, h3, p, figure { margin: 0; }
 .byline { font-size: .875rem; color: #e2e6f7; margin-top: 1.25rem; }
 .byline strong { color: white; }
 .byline span { margin-inline: .35rem; color: #bfc6ec; }
+.byline-date { margin-top: .15rem; }
 .hero-figure { min-width: 0; background: white; color: var(--navy); border-radius: var(--radius); overflow: hidden; box-shadow: 0 17px 40px #0c10324d; }
 .figure-caption { padding: .73rem 1.2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); font-size: .875rem; }
 .figure-caption strong { font-size: .875rem; letter-spacing: .06em; }
