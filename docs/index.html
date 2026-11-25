@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the OCP Short Reach Optical Interconnect workstream’s draft comparison of front pluggable, near package, and co-packaged optics.">
+  <title>Optical Connectivity Options · OCP SROI</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="explorer.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#comparison">Skip to the comparison</a>
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a class="brand" href="https://www.opencompute.org/" aria-label="Open Compute Project">
+        <img src="assets/ocp-logo.png" width="132" height="54" alt="Open Compute Project">
+      </a>
+      <div class="workstream">Short Reach Optical Interconnect<span>Future Technologies Initiative</span></div>
+      <nav aria-label="Page sections">
+        <a href="#comparison">Comparison</a>
+        <a href="#illustrations">Illustrations</a>
+        <a href="#draft">Draft text</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="version"><span>Workstream draft</span> <span>Version 0.5.5</span></p>
+          <h1 id="title">Optical Connectivity Options</h1>
+          <p class="hero-summary">Compare five ways to place optics relative to the host ASIC and see how placement affects the electrical interface and replaceability.</p>
+          <p class="byline"><strong>Jeff Hutchins</strong>, Ranovus <span aria-hidden="true">·</span> <time datetime="2026-10-22">October 22, 2026</time></p>
+        </div>
+        <figure class="hero-figure">
+          <div class="figure-caption"><strong>NPO-HDI</strong><span>Side view</span></div>
+          <div class="hero-drawing">
+            <img src="assets/naming-drawings.svg#svgView(viewBox(18,39.5,43,10.5))" alt="Near-package optics on HDI, positioned beside the host package and connected to fiber.">
+          </div>
+          <figcaption><a href="#illustrations" data-figure="npo-hdi">Explore placement drawings <span aria-hidden="true">↗</span></a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="container comparison section" id="comparison" aria-labelledby="comparison-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="comparison-title">Compare connectivity options</h2>
+          <p>Read across for attachment, connection pitch, electrical interface, and standards maturity.</p>
+        </div>
+        <div class="segmented js-only" role="group" aria-label="Comparison layout">
+          <button type="button" data-view="table" aria-pressed="true">Table</button>
+          <button type="button" data-view="options" aria-pressed="false">By option</button>
+        </div>
+      </div>
+      <div id="comparison-home">
+        <div id="comparison-surface" class="surface">
+          <div class="toolbar js-only">
+            <div class="segmented family-filter" role="group" aria-label="Filter by family">
+              <button type="button" data-filter="all" aria-pressed="true">All options</button>
+              <button type="button" data-filter="fpo" aria-label="Front Pluggable Optics" aria-pressed="false">FPO</button><button type="button" data-filter="npo" aria-label="Near Package Optics" aria-pressed="false">NPO</button><button type="button" data-filter="cpo" aria-label="Co-Packaged Optics" aria-pressed="false">CPO</button>
+            </div>
+            <div class="zoom-tools" id="zoom-tools" role="group" aria-label="Table zoom">
+              <div class="zoom-step">
+                <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+                <output id="zoom-value" aria-live="polite">100%</output>
+                <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+              </div>
+              <button type="button" class="control" id="zoom-fit" aria-pressed="false" title="Fit as much of the table as possible while keeping it readable">Fit width</button>
+              <button type="button" class="control" id="expand-table" aria-haspopup="dialog">Expand</button>
+              <button type="button" class="control" id="close-table" hidden>Close</button>
+            </div>
+          </div>
+          <p class="js-only" id="scroll-hint" hidden>Scroll sideways to see more columns.</p>
+          <div class="matrix-viewport" id="matrix-viewport" tabindex="0" role="region" aria-label="Connectivity options matrix">
+            <table class="matrix"><caption class="visually-hidden">Table 1 – Connectivity Options and Characteristics</caption>
+<colgroup><col class="criterion-column"><col class="option-column" data-family="fpo"><col class="option-column" data-family="npo"><col class="option-column" data-family="npo"><col class="option-column" data-family="cpo"><col class="option-column" data-family="cpo"></colgroup>
+<thead><tr class="locations"><th rowspan="2" id="location" class="criterion">Location</th><th colspan="1" id="loc-front" data-location="front">Optics At Front Panel</th><th colspan="4" id="loc-behind" data-location="behind">Optics Behind the Front Panel</th></tr>
+<tr><th colspan="1" id="family-fpo" data-family="fpo" class="family">Front Pluggable Optics<small>At the faceplate</small></th><th colspan="2" id="family-npo" data-family="npo" class="family">Near Package Optics<small>Optics Outside The Package</small></th><th colspan="2" id="family-cpo" data-family="cpo" class="family">Co-Packaged Optics<small>Optics Inside The Package</small></th></tr>
+<tr><th id="name" scope="col" class="criterion">Name</th><th id="col-fpo" data-family="fpo" scope="col" class="option"><span>FPO</span><small>Optics Plugged at Front Panel</small></th><th id="col-npo-pcb" data-family="npo" scope="col" class="option"><span>NPO-PCB</span><sup><a href="#note-1" aria-label="Terminology note 1">1</a></sup><small>(or OBO) Optics on PCB</small></th><th id="col-npo-hdi" data-family="npo" scope="col" class="option"><span>NPO-HDI</span><sup><a href="#note-2" aria-label="Terminology note 2">2</a></sup><small>Optics on HDI</small></th><th id="col-cpo" data-family="cpo" scope="col" class="option"><span>CPO</span><small>Optics with Standard Packaging</small></th><th id="col-cpo-ap" data-family="cpo" scope="col" class="option"><span>CPO-AP</span><sup><a href="#note-3" aria-label="Terminology note 3">3</a></sup><small>Optics with Advanced Packaging</small></th></tr></thead>
+<tbody>
+<tr><th scope="row" id="row-attachment" class="criterion">Attachment</th><td data-family="fpo" headers="row-attachment loc-front family-fpo col-fpo">Receptacle on front panel</td><td data-family="npo" headers="row-attachment loc-behind family-npo col-npo-pcb">Socketed or Soldered<br>On PCB</td><td data-family="npo" headers="row-attachment loc-behind family-npo col-npo-hdi">Socketed or Soldered<br>On HDI</td><td data-family="cpo" headers="row-attachment loc-behind family-cpo col-cpo">Soldered<br>(Standard Packaging)</td><td data-family="cpo" headers="row-attachment loc-behind family-cpo col-cpo-ap">Soldered<br>(Advanced Packaging)</td></tr>
+<tr><th scope="row" id="row-pitch" class="criterion">Rough Pitch for High-speed</th><td data-family="fpo" headers="row-pitch loc-front family-fpo col-fpo">~0.5 - 1.0 mm</td><td data-family="npo" headers="row-pitch loc-behind family-npo col-npo-pcb">PCB: 0.6-1.0 mm</td><td data-family="npo" headers="row-pitch loc-behind family-npo col-npo-hdi">HDI: 0.3-0.5 mm</td><td data-family="cpo" headers="row-pitch loc-behind family-cpo col-cpo">C4 bumps / ~ 110 µm</td><td data-family="cpo" headers="row-pitch loc-behind family-cpo col-cpo-ap">µbumps / ~ 30-50 µm</td></tr>
+<tr><th scope="row" id="row-interface" class="criterion">Electrical I/F for High-speed</th><td data-family="fpo" headers="row-interface loc-front family-fpo col-fpo">High-speed<br>&gt; 22 dB / 200G</td><td data-family="npo" headers="row-interface loc-behind family-npo col-npo-pcb">High-speed<br>Flex/Cable: 13-18dB/200G<br>PCB: 16-22 dB / 200G</td><td data-family="npo" headers="row-interface loc-behind family-npo col-npo-hdi">High-speed<br>HDI: 13-18dB/200G</td><td data-family="cpo" headers="row-interface loc-behind family-cpo col-cpo">High-speed, &amp;<br>D2D (e.g. UCIe-S, BoW)</td><td data-family="cpo" headers="row-interface loc-behind family-cpo col-cpo-ap">High-speed, &amp;<br>D2D (e.g. UCIe-A, BoW)</td></tr>
+<tr><th scope="row" id="row-characteristics" class="criterion">Characteristics</th><td data-family="fpo" headers="row-characteristics loc-front family-fpo col-fpo"><ul class="cell-list"><li>May use integrated copper attach, copper/flex, or PCB traces</li></ul></td><td data-family="npo" headers="row-characteristics loc-behind family-npo col-npo-pcb"><ul class="cell-list"><li>May use integrated copper attach, copper/flex, or PCB traces</li></ul></td><td data-family="npo" headers="row-characteristics loc-behind family-npo col-npo-hdi"><ul class="cell-list"><li>HDI traces</li></ul></td><td data-family="cpo" headers="row-characteristics loc-behind family-cpo col-cpo"><ul class="cell-list"><li>Lowest loss</li><li>High BW edge density</li><li>Integrated SoC</li></ul></td><td data-family="cpo" headers="row-characteristics loc-behind family-cpo col-cpo-ap"><ul class="cell-list"><li>Lowest loss</li><li>Highest BW edge density</li><li>Highly integrated SoC</li></ul></td></tr>
+<tr><th scope="row" id="row-interoperability" class="criterion">Interoperability &amp; Binding</th><td data-family="fpo" headers="row-interoperability loc-front family-fpo col-fpo">Replaceable with interoperable optics at any time in life cycle,<br>generally hot swappable</td><td data-family="npo" headers="row-interoperability loc-behind family-npo col-npo-pcb"><ul class="cell-list"><li>Soldered: Interoperable but not replaceable</li><li>Socketed: Replaceable when removing blade</li></ul></td><td data-family="npo" headers="row-interoperability loc-behind family-npo col-npo-hdi"><ul class="cell-list"><li>Soldered: Interoperable but not replaceable</li><li>Socketed: Replaceable when removing blade</li></ul></td><td data-family="cpo" headers="row-interoperability loc-behind family-cpo col-cpo"><ul class="cell-list"><li>Interoperable at chiplet level but not replaceable</li></ul></td><td data-family="cpo" headers="row-interoperability loc-behind family-cpo col-cpo-ap"><ul class="cell-list"><li>Interoperable at chiplet level but not replaceable</li></ul></td></tr>
+<tr><th scope="row" id="row-standards" class="criterion">Standards</th><td colspan="1" data-family="fpo" headers="row-standards loc-front family-fpo col-fpo">Standardized</td><td colspan="2" data-family="npo" headers="row-standards loc-behind family-npo col-npo-pcb col-npo-hdi">Standards being developed</td><td colspan="2" data-family="cpo" headers="row-standards loc-behind family-cpo col-cpo col-cpo-ap">Some standards exist, others remain to be developed</td></tr>
+</tbody></table>
+          </div>
+          <div class="option-list" id="option-list" hidden>
+            <details class="option-card" data-family="fpo" data-option="fpo" id="option-fpo"><summary><span><strong>FPO</strong><span class="option-description">Optics Plugged at Front Panel</span></span></summary><div class="option-details"><p>Front Pluggable Optics</p><dl><div><dt>Attachment</dt><dd>Receptacle on front panel</dd></div><div><dt>Rough Pitch for High-speed</dt><dd>~0.5 - 1.0 mm</dd></div><div><dt>Electrical I/F for High-speed</dt><dd>High-speed<br>&gt; 22 dB / 200G</dd></div><div><dt>Characteristics</dt><dd><ul class="cell-list"><li>May use integrated copper attach, copper/flex, or PCB traces</li></ul></dd></div><div><dt>Interoperability &amp; Binding</dt><dd>Replaceable with interoperable optics at any time in life cycle,<br>generally hot swappable</dd></div><div><dt>Standards</dt><dd>Standardized</dd></div></dl><a class="source-link" href="#illustrations" data-figure="fpo">See placement <span aria-hidden="true">↗</span></a></div></details>
+<details class="option-card" data-family="npo" data-option="npo-pcb" id="option-npo-pcb"><summary><span><strong>NPO-PCB</strong><span class="option-description">(or OBO) Optics on PCB</span></span></summary><div class="option-details"><p>Near Package Optics<sup><a href="#note-1" aria-label="Terminology note 1">1</a></sup></p><dl><div><dt>Attachment</dt><dd>Socketed or Soldered<br>On PCB</dd></div><div><dt>Rough Pitch for High-speed</dt><dd>PCB: 0.6-1.0 mm</dd></div><div><dt>Electrical I/F for High-speed</dt><dd>High-speed<br>Flex/Cable: 13-18dB/200G<br>PCB: 16-22 dB / 200G</dd></div><div><dt>Characteristics</dt><dd><ul class="cell-list"><li>May use integrated copper attach, copper/flex, or PCB traces</li></ul></dd></div><div><dt>Interoperability &amp; Binding</dt><dd><ul class="cell-list"><li>Soldered: Interoperable but not replaceable</li><li>Socketed: Replaceable when removing blade</li></ul></dd></div><div><dt>Standards</dt><dd>Standards being developed</dd></div></dl><a class="source-link" href="#illustrations" data-figure="npo-pcb">See placement <span aria-hidden="true">↗</span></a></div></details>
+<details class="option-card" data-family="npo" data-option="npo-hdi" id="option-npo-hdi"><summary><span><strong>NPO-HDI</strong><span class="option-description">Optics on HDI</span></span></summary><div class="option-details"><p>Near Package Optics<sup><a href="#note-2" aria-label="Terminology note 2">2</a></sup></p><dl><div><dt>Attachment</dt><dd>Socketed or Soldered<br>On HDI</dd></div><div><dt>Rough Pitch for High-speed</dt><dd>HDI: 0.3-0.5 mm</dd></div><div><dt>Electrical I/F for High-speed</dt><dd>High-speed<br>HDI: 13-18dB/200G</dd></div><div><dt>Characteristics</dt><dd><ul class="cell-list"><li>HDI traces</li></ul></dd></div><div><dt>Interoperability &amp; Binding</dt><dd><ul class="cell-list"><li>Soldered: Interoperable but not replaceable</li><li>Socketed: Replaceable when removing blade</li></ul></dd></div><div><dt>Standards</dt><dd>Standards being developed</dd></div></dl><a class="source-link" href="#illustrations" data-figure="npo-hdi">See placement <span aria-hidden="true">↗</span></a></div></details>
+<details class="option-card" data-family="cpo" data-option="cpo" id="option-cpo"><summary><span><strong>CPO</strong><span class="option-description">Optics with Standard Packaging</span></span></summary><div class="option-details"><p>Co-Packaged Optics</p><dl><div><dt>Attachment</dt><dd>Soldered<br>(Standard Packaging)</dd></div><div><dt>Rough Pitch for High-speed</dt><dd>C4 bumps / ~ 110 µm</dd></div><div><dt>Electrical I/F for High-speed</dt><dd>High-speed, &amp;<br>D2D (e.g. UCIe-S, BoW)</dd></div><div><dt>Characteristics</dt><dd><ul class="cell-list"><li>Lowest loss</li><li>High BW edge density</li><li>Integrated SoC</li></ul></dd></div><div><dt>Interoperability &amp; Binding</dt><dd><ul class="cell-list"><li>Interoperable at chiplet level but not replaceable</li></ul></dd></div><div><dt>Standards</dt><dd>Some standards exist, others remain to be developed</dd></div></dl><a class="source-link" href="#illustrations" data-figure="cpo">See placement <span aria-hidden="true">↗</span></a></div></details>
+<details class="option-card" data-family="cpo" data-option="cpo-ap" id="option-cpo-ap"><summary><span><strong>CPO-AP</strong><span class="option-description">Optics with Advanced Packaging</span></span></summary><div class="option-details"><p>Co-Packaged Optics<sup><a href="#note-3" aria-label="Terminology note 3">3</a></sup></p><dl><div><dt>Attachment</dt><dd>Soldered<br>(Advanced Packaging)</dd></div><div><dt>Rough Pitch for High-speed</dt><dd>µbumps / ~ 30-50 µm</dd></div><div><dt>Electrical I/F for High-speed</dt><dd>High-speed, &amp;<br>D2D (e.g. UCIe-A, BoW)</dd></div><div><dt>Characteristics</dt><dd><ul class="cell-list"><li>Lowest loss</li><li>Highest BW edge density</li><li>Highly integrated SoC</li></ul></dd></div><div><dt>Interoperability &amp; Binding</dt><dd><ul class="cell-list"><li>Interoperable at chiplet level but not replaceable</li></ul></dd></div><div><dt>Standards</dt><dd>Some standards exist, others remain to be developed</dd></div></dl><a class="source-link" href="#illustrations" data-figure="cpo-ap">See placement <span aria-hidden="true">↗</span></a></div></details>
+          </div>
+          <div class="table-meta">
+            <p id="table-status" role="status">Showing all 5 options</p>
+          </div>
+        </div>
+      </div>
+
+      <dialog id="table-dialog" aria-labelledby="dialog-title">
+        <div class="dialog-heading"><h2 id="dialog-title">Connectivity options and characteristics</h2></div>
+      </dialog>
+
+      <aside class="terminology" aria-labelledby="terminology-title">
+        <h3 id="terminology-title">Terminology notes</h3>
+        <ol><li id="note-1">NPO-PCB implementations are sometimes referred to as On-Board Optics (OBO)</li><li id="note-2">Some on-package implementations of NPO-HDI are sometimes referred to as &quot;CPO&quot; (CPO-HDI)</li><li id="note-3">A specific implementation of CPO-AP using a combination of an interposer and µbumps for optics has been referred to as Co-Integrated Optics (CIO)</li></ol>
+      </aside>
+    </section>
+
+    <section class="figure-section" id="illustrations" aria-labelledby="illustration-title">
+      <div class="container section">
+        <div class="section-heading">
+          <div>
+            <h2 id="illustration-title">Optics placement illustrations</h2>
+            <p>See where the optical engine, host package, and front panel sit in each configuration.</p>
+          </div>
+          <a class="source-link" href="assets/placement-options.png">Open full figure and legend <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="figure-explorer js-only">
+          <div class="figure-toolbar">
+            <label for="figure-select">Configuration</label>
+            <select id="figure-select">
+              <option value="pluggable-pcb">Pluggable-PCB</option>
+              <option value="pluggable-npc">Pluggable-NPC</option>
+              <option value="npo-pcb">NPO-PCB</option>
+              <option value="npo-hdi">NPO-HDI</option>
+              <option value="cpo">CPO-SP</option>
+              <option value="cpo-ap">CPO-AP</option>
+            </select>
+          </div>
+          <div class="figure-panels">
+            <figure>
+              <figcaption>Side view</figcaption>
+              <svg id="side-view" class="diagram" role="img" aria-label="Pluggable-PCB, side view" viewBox="244 60 539 182">
+                <image href="assets/placement-options.png" width="1214" height="1444"></image>
+              </svg>
+            </figure>
+            <figure>
+              <figcaption>Top view</figcaption>
+              <svg id="top-view" class="diagram" role="img" aria-label="Pluggable-PCB, top view" viewBox="816 60 375 182">
+                <image href="assets/placement-options.png" width="1214" height="1444"></image>
+              </svg>
+            </figure>
+          </div>
+          <p class="figure-note" id="figure-note"></p>
+          <details class="legend">
+            <summary>Component legend</summary>
+            <ul>
+              <li><span style="--swatch: #b3b3b3"></span>Die</li>
+              <li><span style="--swatch: #aaccff"></span>Interposer</li>
+              <li><span style="--swatch: #a0703c"></span>Package substrate</li>
+              <li><span style="--swatch: #1f8a70"></span>Module PCB</li>
+              <li><span style="--swatch: #44aa00"></span>PCB</li>
+              <li><span style="--swatch: #d4aa00"></span>Optical engine (OE)</li>
+              <li><span style="--swatch: #ccc"></span>Pluggable module</li>
+              <li><span style="--swatch: #484848"></span>Cage</li>
+              <li><span style="--swatch: #000"></span>Socket / connector</li>
+              <li><span class="line" style="--swatch: #7a6660"></span>Near-package copper</li>
+              <li><span class="line" style="--swatch: #00f"></span>Fiber</li>
+              <li><span class="outline"></span>MCM lid</li>
+            </ul>
+          </details>
+        </div>
+        <img class="fallback-figure" src="assets/placement-options.png" width="1214" height="1444" alt="Side and top views of Pluggable-PCB, Pluggable-NPC, NPO-PCB, NPO-HDI, CPO-SP, and CPO-AP, with a component color legend.">
+        <p class="figure-links">
+          <a href="assets/naming-drawings.svg#svgView(viewBox(0,10,61,60))" type="image/svg+xml">Editable side views (SVG)</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="container section draft" id="draft" aria-labelledby="draft-title">
+      <div class="section-heading"><h2 id="draft-title">Contribution text</h2></div>
+      <div class="draft-copy">
+        <h3>Introduction</h3>
+        <p>As data rates climb toward 200G per lane and beyond, the industry is exploring several ways to bring optics closer to the host ASIC, and the terminology used to describe these options is often inconsistent. The table below organizes them into three categories by location: Front Pluggable Optics (FPO) at the faceplate, Near Package Optics (NPO) on the PCB or HDI substrate, and Co-Packaged Optics (CPO) inside the package. It compares each option across attachment method, connection pitch, electrical interface, characteristics, interoperability, and standards maturity. In short, moving optics closer to the ASIC shortens the electrical path, reducing loss and increasing bandwidth density, but at the cost of replaceability and with less mature standards.</p>
+        <details>
+          <summary>License</summary>
+          <h3>Creative Commons</h3>
+          <p>OCP encourages participants to share their proposals, specifications and designs with the community. This is to promote openness and encourage continuous and open feedback. It is important to remember that by providing feedback for any such documents, whether in written or verbal form, that the contributor or the contributor&#x27;s organization grants OCP and its members irrevocable right to use this feedback for any purpose without any further obligation.</p>
+<p>It is acknowledged that any such documentation and any ancillary materials that are provided to OCP in connection with this document, including without limitation any white papers, articles, photographs, studies, diagrams, contact information (together, “Materials”) are made available under the Creative Commons Attribution-ShareAlike 4.0 International License found here: <a href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a>, or any later version, and without limiting the foregoing, OCP may make the Materials available under such terms.</p>
+<p>As a contributor to this document, all members represent that they have the authority to grant the rights and licenses herein. They further represent and warrant that the Materials do not and will not violate the copyrights or misappropriate the trade secret rights of any third party, including without limitation rights in intellectual property. The contributor(s) also represent that, to the extent the Materials include materials protected by copyright or trade secret rights that are owned or created by any third-party, they have obtained permission for its use consistent with the foregoing. They will provide OCP evidence of such permission upon OCP’s request. This document and any &quot;Materials&quot; are published on the respective project&#x27;s wiki page and are open to the public in accordance with OCP&#x27;s Bylaws and IP Policy. This can be found at <a href="http://www.opencompute.org/participate/legal-documents/">http://www.opencompute.org/participate/legal-documents/</a>. If you have any questions, please contact OCP.</p>
+        </details>
+        <details>
+          <summary>About Open Compute Foundation</summary>
+          <p>The Open Compute Project (OCP) brings at-scale innovations and hyperscaler best practices to all, spanning technology domains from the data center to the edge, and the technology stack from silicon, to systems, to site facilities and services. The international OCP Community is made up of organizations and people from hyperscale and tier-2 cloud data center operators, communications providers, colocation providers, diverse enterprises, and technology vendors. The OCP Foundation fosters collaboration within the Community to tackle market challenges in an array of OCP Projects that create open contributions such as specifications, designs, and more. The OCP Solution Provider Program then recognizes the application of those contributions in compliant products, solutions, and data center facilities and services with designations like OCP Inspired, OCP Accepted and OCP Ready. With the tenets of openness, impact, efficiency, scale and sustainability, the OCP engages and educates thousands of engineers every year through many events and webinars. Across many initiatives the OCP Foundation and Community are meeting the market today and shaping the future.</p>
+<p>Learn more at: <a href="https://www.opencompute.org">www.opencompute.org</a>.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Optical Connectivity Options · Workstream draft 0.5.5</p>
+      <div>
+        <a href="https://www.opencompute.org/projects/future-technologies-initiative/short-reach-optical-interconnect/">OCP workstream</a>
+        <a href="https://github.com/opencomputeproject/integrated-optics-reqs">GitHub repository</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

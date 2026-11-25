@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the OCP Short Reach Optical Interconnect workstream’s draft comparison of front pluggable, near package, and co-packaged optics.">
+  <title>$title · OCP SROI</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="explorer.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#comparison">Skip to the comparison</a>
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a class="brand" href="https://www.opencompute.org/" aria-label="Open Compute Project">
+        <img src="assets/ocp-logo.png" width="132" height="54" alt="Open Compute Project">
+      </a>
+      <div class="workstream">Short Reach Optical Interconnect<span>Future Technologies Initiative</span></div>
+      <nav aria-label="Page sections">
+        <a href="#comparison">Comparison</a>
+        <a href="#illustrations">Illustrations</a>
+        <a href="#draft">Draft text</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="version"><span>Workstream draft</span> <span>Version $version</span></p>
+          <h1 id="title">$title</h1>
+          <p class="hero-summary">Compare five ways to place optics relative to the host ASIC and see how placement affects the electrical interface and replaceability.</p>
+          <p class="byline"><strong>$author</strong>, $affiliation <span aria-hidden="true">·</span> <time datetime="$date">$date_display</time></p>
+        </div>
+        <figure class="hero-figure">
+          <div class="figure-caption"><strong>NPO-HDI</strong><span>Side view</span></div>
+          <div class="hero-drawing">
+            <img src="assets/naming-drawings.svg#svgView(viewBox(18,39.5,43,10.5))" alt="Near-package optics on HDI, positioned beside the host package and connected to fiber.">
+          </div>
+          <figcaption><a href="#illustrations" data-figure="npo-hdi">Explore placement drawings <span aria-hidden="true">↗</span></a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="container comparison section" id="comparison" aria-labelledby="comparison-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="comparison-title">Compare connectivity options</h2>
+          <p>Read across for attachment, connection pitch, electrical interface, and standards maturity.</p>
+        </div>
+        <div class="segmented js-only" role="group" aria-label="Comparison layout">
+          <button type="button" data-view="table" aria-pressed="true">Table</button>
+          <button type="button" data-view="options" aria-pressed="false">By option</button>
+        </div>
+      </div>
+      <div id="comparison-home">
+        <div id="comparison-surface" class="surface">
+          <div class="toolbar js-only">
+            <div class="segmented family-filter" role="group" aria-label="Filter by family">
+              <button type="button" data-filter="all" aria-pressed="true">All options</button>
+              $filters
+            </div>
+            <div class="zoom-tools" id="zoom-tools" role="group" aria-label="Table zoom">
+              <div class="zoom-step">
+                <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+                <output id="zoom-value" aria-live="polite">100%</output>
+                <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+              </div>
+              <button type="button" class="control" id="zoom-fit" aria-pressed="false" title="Fit as much of the table as possible while keeping it readable">Fit width</button>
+              <button type="button" class="control" id="expand-table" aria-haspopup="dialog">Expand</button>
+              <button type="button" class="control" id="close-table" hidden>Close</button>
+            </div>
+          </div>
+          <p class="js-only" id="scroll-hint" hidden>Scroll sideways to see more columns.</p>
+          <div class="matrix-viewport" id="matrix-viewport" tabindex="0" role="region" aria-label="Connectivity options matrix">
+            $matrix
+          </div>
+          <div class="option-list" id="option-list" hidden>
+            $option_cards
+          </div>
+          <div class="table-meta">
+            <p id="table-status" role="status">Showing all $option_count options</p>
+          </div>
+        </div>
+      </div>
+
+      <dialog id="table-dialog" aria-labelledby="dialog-title">
+        <div class="dialog-heading"><h2 id="dialog-title">Connectivity options and characteristics</h2></div>
+      </dialog>
+
+      <aside class="terminology" aria-labelledby="terminology-title">
+        <h3 id="terminology-title">Terminology notes</h3>
+        $notes
+      </aside>
+    </section>
+
+    <section class="figure-section" id="illustrations" aria-labelledby="illustration-title">
+      <div class="container section">
+        <div class="section-heading">
+          <div>
+            <h2 id="illustration-title">Optics placement illustrations</h2>
+            <p>See where the optical engine, host package, and front panel sit in each configuration.</p>
+          </div>
+          <a class="source-link" href="assets/placement-options.png">Open full figure and legend <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="figure-explorer js-only">
+          <div class="figure-toolbar">
+            <label for="figure-select">Configuration</label>
+            <select id="figure-select">
+              <option value="pluggable-pcb">Pluggable-PCB</option>
+              <option value="pluggable-npc">Pluggable-NPC</option>
+              <option value="npo-pcb">NPO-PCB</option>
+              <option value="npo-hdi">NPO-HDI</option>
+              <option value="cpo">CPO-SP</option>
+              <option value="cpo-ap">CPO-AP</option>
+            </select>
+          </div>
+          <div class="figure-panels">
+            <figure>
+              <figcaption>Side view</figcaption>
+              <svg id="side-view" class="diagram" role="img" aria-label="Pluggable-PCB, side view" viewBox="244 60 539 182">
+                <image href="assets/placement-options.png" width="1214" height="1444"></image>
+              </svg>
+            </figure>
+            <figure>
+              <figcaption>Top view</figcaption>
+              <svg id="top-view" class="diagram" role="img" aria-label="Pluggable-PCB, top view" viewBox="816 60 375 182">
+                <image href="assets/placement-options.png" width="1214" height="1444"></image>
+              </svg>
+            </figure>
+          </div>
+          <p class="figure-note" id="figure-note"></p>
+          <details class="legend">
+            <summary>Component legend</summary>
+            <ul>
+              <li><span style="--swatch: #b3b3b3"></span>Die</li>
+              <li><span style="--swatch: #aaccff"></span>Interposer</li>
+              <li><span style="--swatch: #a0703c"></span>Package substrate</li>
+              <li><span style="--swatch: #1f8a70"></span>Module PCB</li>
+              <li><span style="--swatch: #44aa00"></span>PCB</li>
+              <li><span style="--swatch: #d4aa00"></span>Optical engine (OE)</li>
+              <li><span style="--swatch: #ccc"></span>Pluggable module</li>
+              <li><span style="--swatch: #484848"></span>Cage</li>
+              <li><span style="--swatch: #000"></span>Socket / connector</li>
+              <li><span class="line" style="--swatch: #7a6660"></span>Near-package copper</li>
+              <li><span class="line" style="--swatch: #00f"></span>Fiber</li>
+              <li><span class="outline"></span>MCM lid</li>
+            </ul>
+          </details>
+        </div>
+        <img class="fallback-figure" src="assets/placement-options.png" width="1214" height="1444" alt="Side and top views of Pluggable-PCB, Pluggable-NPC, NPO-PCB, NPO-HDI, CPO-SP, and CPO-AP, with a component color legend.">
+        <p class="figure-links">
+          <a href="assets/naming-drawings.svg#svgView(viewBox(0,10,61,60))" type="image/svg+xml">Editable side views (SVG)</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="container section draft" id="draft" aria-labelledby="draft-title">
+      <div class="section-heading"><h2 id="draft-title">Contribution text</h2></div>
+      <div class="draft-copy">
+        <h3>Introduction</h3>
+        <p>$introduction</p>
+        <details>
+          <summary>License</summary>
+          <h3>$license_title</h3>
+          $license_text
+        </details>
+        <details>
+          <summary>$about_title</summary>
+          $about_text
+        </details>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Optical Connectivity Options · Workstream draft $version</p>
+      <div>
+        <a href="https://www.opencompute.org/projects/future-technologies-initiative/short-reach-optical-interconnect/">OCP workstream</a>
+        <a href="https://github.com/opencomputeproject/integrated-optics-reqs">GitHub repository</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
